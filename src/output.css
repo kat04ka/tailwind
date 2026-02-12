@@ -208,6 +208,9 @@
   .inline-block {
     display: inline-block;
   }
+  .table {
+    display: table;
+  }
   .h-91 {
     height: calc(var(--spacing) * 91);
   }
@@ -226,6 +229,9 @@
   .flex-1 {
     flex: 1;
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -234,6 +240,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -317,6 +326,9 @@
   .p-0 {
     padding: calc(var(--spacing) * 0);
   }
+  .p-xs {
+    padding: 20px;
+  }
   .px-0 {
     padding-inline: calc(var(--spacing) * 0);
   }
@@ -325,6 +337,15 @@
   }
   .px-sm {
     padding-inline: 22px;
+  }
+  .px-xs {
+    padding-inline: 20px;
+  }
+  .py-2xl {
+    padding-block: 50px;
+  }
+  .py-xs {
+    padding-block: 20px;
   }
   .py-xxs {
     padding-block: 14px;
@@ -338,8 +359,8 @@
   .pb-3xl {
     padding-bottom: 60px;
   }
-  .pb-7xl {
-    padding-bottom: 240px;
+  .pb-xl {
+    padding-bottom: 40px;
   }
   .text-center {
     text-align: center;
@@ -361,6 +382,11 @@
     line-height: var(--tw-leading, 1.2);
     letter-spacing: var(--tw-tracking, -0.05em);
   }
+  .text-paragraph {
+    font-size: 15px;
+    line-height: var(--tw-leading, 1.4);
+    letter-spacing: var(--tw-tracking, -0.005em);
+  }
   .text-background {
     color: #ffffff;
   }
@@ -370,8 +396,18 @@
   .text-link {
     color: #000000;
   }
+  .text-text-paragraph {
+    color: #6f6f6f;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
   .opacity-0 {
     opacity: 0%;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .transition-transform {
     transition-property: transform, translate, scale, rotate;
@@ -424,6 +460,9 @@
     }
   }
 }
+body {
+  font-family: DM Sans, sans-serif;
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -445,6 +484,11 @@
   inherits: false;
 }
 @property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-outline-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
@@ -491,6 +535,7 @@
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-border-style: solid;
+      --tw-outline-style: solid;
       --tw-duration: initial;
       --tw-ease: initial;
       --tw-translate-x: 0;

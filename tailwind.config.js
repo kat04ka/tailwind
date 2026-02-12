@@ -115,7 +115,7 @@ module.exports = {
 
         //text
         headline: "#000000",
-        paragraph: "#6f6f6f",
+        "text-paragraph": "#6f6f6f",
         captions: "#485c11",
         link: "#000000",
 
