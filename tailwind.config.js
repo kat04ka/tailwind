@@ -29,7 +29,7 @@ module.exports = {
         ],
 
         "heading-1": [
-          "60px",
+          "clamp(32px, 8vw, 60px)",
           {
             lineHeight: "0.9",
             letterSpacing: "-0.03em",
@@ -116,7 +116,7 @@ module.exports = {
         //text
         headline: "#000000",
         "text-paragraph": "#6f6f6f",
-        captions: "#485c11",
+        "text-captions": "#485c11",
         link: "#000000",
 
         divider: "#e9e9e9",

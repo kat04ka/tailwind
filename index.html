@@ -12,7 +12,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cable"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     />
     <link rel="stylesheet" href="./src/output.css" />
   </head>
@@ -121,7 +121,7 @@
           <div class="flex flex-col gap-xl py-2xl">
             <p class="text-paragraph text-text-paragraph">Trusted by:</p>
             <ul
-              class="flex items-center justify-center gap-2xl"
+              class="flex flex-wrap items-center justify-center gap-xl lg:gap-2xl"
             >
               <li class="p-xs">
                 <img src="./assets/img/Logo 1.png" alt="Logo 1" />
@@ -146,83 +146,78 @@
         </div>
       </section>
 
-      <section id="benefits" class="benefits pb-space-6xl">
-        <div class="container-xxl">
+      <section id="benefits" class="benefits">
+        <div class="max-w-320 mx-auto px-2 pb-6xl">
           <div class="divider"></div>
-          <div
-            class="benefits__content d-flex flex-column gap-3xl pt-space-4xl pb-space-3xl"
-          >
-            <div class="d-flex flex-column gap-3xl">
-              <p class="ag-captions m-0">Benefits</p>
-              <h2 class="ag-heading-1 m-0">We’ve cracked the code.</h2>
-              <p class="ag-paragraph m-0">
+          <div class="benefits__content flex flex-col gap-3xl pt-4xl pb-3xl">
+            <div class="flex flex-col gap-3xl">
+              <p class="text-captions text-text-captions">Benefits</p>
+
+              <h2 class="text-heading-1 text-headline">
+                We’ve cracked the code.
+              </h2>
+              <p class="text-paragraph text-text-paragraph">
                 Area provides real insights, without the data overload.
               </p>
             </div>
 
-            <div class="row pt-space-xl">
-              <div class="col-12 col-md-6 col-lg-3">
-                <div
-                  class="benefits__item py-space-xl pr-space-xs d-flex flex-column gap-md"
-                >
-                  <span class="benefits__icon material-symbols-outlined">
-                    cable
-                  </span>
-                  <h5 class="ag-heading-3 m-0">Amplify Insights</h5>
-                  <p class="ag-paragraph m-0">
-                    Unlock data-driven decisions with comprehensive analytics,
-                    revealing key opportunities for strategic regional growth.
-                  </p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-xl">
+              <div class="benefits__item flex flex-col gap-md py-xl pr-xs">
+                <span class="benefits__icon material-symbols-outlined">
+                  cable
+                </span>
+                <h5 class="text-heading-3 text-headline">Amplify Insights</h5>
+                <p class="text-paragraph text-text-paragraph">
+                  Unlock data-driven decisions with comprehensive analytics,
+                  revealing key opportunities for strategic regional growth.
+                </p>
               </div>
 
-              <div class="col-12 col-md-6 col-lg-3">
-                <div
-                  class="benefits__item py-space-xl pr-space-xs d-flex flex-column gap-md"
-                >
-                  <i class="benefits__icon bi bi-globe-americas"></i>
-                  <h5 class="ag-heading-3 m-0">Control Your Global Presence</h5>
-                  <p class="ag-paragraph m-0">
-                    Manage and track satellite offices, ensuring consistent
-                    performance and streamlined operations everywhere.
-                  </p>
-                </div>
+              <div class="benefits__item flex flex-col gap-md py-xl pr-xs">
+                <span class="benefits__icon material-symbols-outlined">
+                  globe
+                </span>
+                <h5 class="text-heading-3 text-headline">
+                  Control Your Global Presence
+                </h5>
+                <p class="text-paragraph text-text-paragraph">
+                  Manage and track satellite offices, ensuring consistent
+                  performance and streamlined operations everywhere.
+                </p>
               </div>
 
-              <div class="col-12 col-md-6 col-lg-3">
-                <div
-                  class="benefits__item py-space-xl pr-space-xs d-flex flex-column gap-md"
-                >
-                  <i class="benefits__icon bi bi-person-lines-fill"></i>
-                  <h5 class="ag-heading-3 m-0">Remove Language Barriers</h5>
-                  <p class="ag-paragraph m-0">
-                    Adapt to diverse markets with built-in localization for
-                    clear communication and enhanced user experience.
-                  </p>
-                </div>
+              <div class="benefits__item flex flex-col gap-md py-xl pr-xs">
+                <span class="benefits__icon material-symbols-outlined">
+                  connect_without_contact
+                </span>
+                <h5 class="text-heading-3 text-headline">
+                  Remove Language Barriers
+                </h5>
+                <p class="text-paragraph text-text-paragraph">
+                  Adapt to diverse markets with built-in localization for clear
+                  communication and enhanced user experience.
+                </p>
               </div>
 
-              <div class="col-12 col-md-6 col-lg-3">
-                <div
-                  class="benefits__item py-space-xl pr-space-xs d-flex flex-column gap-md"
-                >
-                  <i class="benefits__icon bi bi-graph-up"></i>
-                  <h5 class="ag-heading-3 m-0">Visualize Growth</h5>
-                  <p class="ag-paragraph m-0">
-                    Generate precise, visually compelling reports that
-                    illustrate your growth trajectories across all regions.
-                  </p>
-                </div>
+              <div class="benefits__item flex flex-col gap-md py-xl pr-xs">
+                <span class="benefits__icon material-symbols-outlined">
+                  timeline
+                </span>
+                <h5 class="text-heading-3 text-headline">Visualize Growth</h5>
+                <p class="text-paragraph text-text-paragraph">
+                  Generate precise, visually compelling reports that illustrate
+                  your growth trajectories across all regions.
+                </p>
               </div>
             </div>
           </div>
 
-          <div class="container-xxl px-0">
-            <div class="benefits__media radius-lg overflow-hidden">
+          <div class="max-w-320 mx-auto px-0">
+            <div class="benefits__media rounded-4xl overflow-hidden">
               <img
                 src="./assets/img/benefits__hero-image.png"
                 alt=""
-                class="benefits__image"
+                class="benefits__image w-full min-h-150 object-cover"
               />
             </div>
           </div>
