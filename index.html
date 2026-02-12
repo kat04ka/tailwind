@@ -7,148 +7,97 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?
-      family=DM+Sans:wght@400;500;700&
-      family=Roboto+Mono:wght@400;500&
-      family=Crimson+Text:wght@400&
-      family=Rethink+Sans:wght@500&
-      family=Reddit+Mono:wght@500&
-      display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto+Mono:wght@400;500&family=Crimson+Text:wght@400&family=Rethink+Sans:wght@500&family=Reddit+Mono:wght@500&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cable"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="tailwind.css">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="./src/output.css" />
   </head>
 
   <body>
     <input type="checkbox" id="themeToggle" class="theme-toggle" hidden />
 
-    <header>
-      <nav class="navbar navbar-expand-lg fixed-top bg-transparent">
-        <div class="container-xxl align-items-center">
-          <a class="navbar-brand ag-logo" href="#">Area</a>
+    <header class="bg-gray-400 fixed top-0 left-0 w-full z-10">
+      <nav class="max-w-320 mx-auto px-2 bg-transparent">
+        <div class="flex items-center pt-xs pb-3xl">
+          <a href="#" class="font-base text-logo text-link"> Area </a>
 
-          <div
-            class="collapse navbar-collapse justify-content-center d-none d-lg-flex"
-          >
-            <ul
-              class="navbar-nav gap-lg px-space-xs py-space-md nav-links-wrapper"
-            >
-              <li class="nav-item">
-                <a class="nav-link ag-link p-0" href="#benefits">Benefits</a>
+          <div class="flex-1 flex justify-center">
+            <ul class="flex gap-lg">
+              <li>
+                <a href="#benefits" class="text-link hover:text-accent-6">
+                  Benefits
+                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ag-link p-0" href="#specs">Specifications</a>
+              <li>
+                <a href="#specs" class="text-link hover:text-accent-6">
+                  Specifications
+                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ag-link p-0" href="#steps">How-to</a>
+              <li>
+                <a href="#steps" class="text-link hover:text-accent-6">
+                  How-to
+                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ag-link p-0" href="#connect">Contact Us</a>
+              <li>
+                <a href="#connect" class="text-link hover:text-accent-6">
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>
 
-          <div class="d-flex align-items-center gap-sm ms-auto">
+          <div class="flex items-center gap-sm">
             <label
               for="themeToggle"
-              class="theme-switch btn btn-outline-secondary d-inline-flex align-items-center"
+              class="flex items-center cursor-pointer gap-xxxs"
             >
-              <span class="icon-light">☀️</span>
-              <span class="icon-dark">🌙</span>
+              <span>☀️</span>
+              <span>🌙</span>
             </label>
 
             <a
-              class="btn btn-cta d-none d-lg-inline-flex align-items-center ag-link gap-xxxs"
               href="#"
+              class="group hidden lg:inline-flex items-center px-sm py-xxs gap-xxxs bg-accent-1 hover:bg-accent-3 text-background rounded-pill"
             >
               Learn More
-              <img class="btn-cta__arrow" src="./assets/img/arrow.png" alt="" />
+              <img
+                src="./assets/img/arrow.png"
+                alt=""
+                class="inline-block transition-transform duration-200 ease-out group-hover:-translate-y-1"
+              />
             </a>
 
-            <button
-              class="navbar-toggler d-lg-none"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#mobileNav"
-            >
-              <span class="navbar-toggler-icon"></span>
+            <button class="lg:hidden flex items-center" type="button">
+              ☰
             </button>
           </div>
         </div>
       </nav>
-
-      <div
-        class="offcanvas offcanvas-end d-lg-none"
-        tabindex="-1"
-        id="mobileNav"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title ag-logo">Area</h5>
-          <button class="btn-close" data-bs-dismiss="offcanvas"></button>
-        </div>
-
-        <div class="offcanvas-body d-flex flex-column gap-3xl">
-          <ul class="navbar-nav gap-lg">
-            <li class="nav-item">
-              <a class="nav-link ag-link js-scroll" href="#benefits"
-                >Benefits</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link ag-link js-scroll" href="#specs"
-                >Specifications</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link ag-link js-scroll" href="#steps">How-to</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link ag-link js-scroll" href="#connect"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
-
-          <a class="btn btn-cta mt-auto" href="#">
-            Learn More
-            <img class="header_arrow" src="./assets/img/arrow.png" alt="" />
-          </a>
-        </div>
-      </div>
     </header>
 
     <main class="main">
       <section class="hero">
-        <div class="container-xxl">
-          <div class="d-flex flex-column gap-5xl pt-space-6xl">
-            <h2 class="hero__heading ag-display text-center">
+        <div class="max-w-320 mx-auto px-2 z-0">
+          <div class="flex flex-col gap-5xl pt-7xl pb-7xl">
+            <h2 class="text-display text-center font-display text-headline">
               Browse everything.
             </h2>
-           
 
-            <div class="hero__visual">
-              <div class="hero__background"></div>
+            <div class="relative flex justify-center items-end">
+              <div
+                class="absolute bottom-0 w-full bg-center h-91 rounded-4xl"
+                style="background-image: url(assets/img/bg.png)"
+              ></div>
 
-              <div class="hero__mask">
+              <div class="relative h-110 lg:h-132 overflow-hidden">
                 <picture>
                   <source
                     srcset="./assets/img/hero-desktop.png"
-                    media="(min-width: 1200px)"
+                    media="(min-width: 1024px)"
                   />
 
                   <source
@@ -158,7 +107,7 @@
                   <img
                     src="./assets/img/hero-mobile.png"
                     alt="hero preview"
-                    class="hero__image"
+                    class="hero__image object-cover opacity-0 animate-fadeIn"
                   />
                 </picture>
               </div>
@@ -232,9 +181,7 @@
                   class="benefits__item py-space-xl pr-space-xs d-flex flex-column gap-md"
                 >
                   <i class="benefits__icon bi bi-globe-americas"></i>
-                  <h5 class="ag-heading-3 m-0">
-                    Control Your Global Presence
-                  </h5>
+                  <h5 class="ag-heading-3 m-0">Control Your Global Presence</h5>
                   <p class="ag-paragraph m-0">
                     Manage and track satellite offices, ensuring consistent
                     performance and streamlined operations everywhere.
@@ -763,13 +710,5 @@
         </div>
       </div>
     </section>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/index.js"></script>
-    <script src="js/theme.js"></script>
   </body>
 </html>

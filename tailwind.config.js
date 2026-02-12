@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./index.html", "./src/**/*.{html,js,ts,jsx,tsx}"],
+  content: ["./index.html"],
   theme: {
     extend: {
       // fonts
@@ -7,29 +7,6 @@ module.exports = {
         base: ["DM Sans", "sans-serif"],
         display: ["Crimson Text", "serif"],
         mono: ["Roboto Mono", "monospace"],
-      },
-
-      colors: {
-        background: "#ffffff",
-        base: "#000000",
-
-        //accents
-        accent: {
-          1: "#485c11",
-          2: "#dfecc6",
-          3: "#8e9c78",
-          4: "#000000",
-          5: "#6f6f6f",
-          6: "#929292",
-        },
-
-        //text
-        headline: "#000000",
-        paragraph: "#6f6f6f",
-        captions: "#485c11",
-        link: "#000000",
-
-        divider: "#e9e9e9",
       },
 
       fontSize: {
@@ -43,7 +20,7 @@ module.exports = {
         ],
 
         display: [
-          "160px",
+          "clamp(52px, 12vw, 160px)",
           {
             lineHeight: "0.9",
             letterSpacing: "-0.0425em",
@@ -121,6 +98,30 @@ module.exports = {
         ],
       },
 
+      colors: {
+        background: "#ffffff",
+        black: "#000000",
+
+        //accents
+        accent: {
+          1: "#485c11",
+          2: "#dfecc6",
+          3: "#8e9c78",
+          4: "#000000",
+          5: "#6f6f6f",
+          6: "#929292",
+          7: "#e3e3e3",
+        },
+
+        //text
+        headline: "#000000",
+        paragraph: "#6f6f6f",
+        captions: "#485c11",
+        link: "#000000",
+
+        divider: "#e9e9e9",
+      },
+
       //spacing
       spacing: {
         xxs: "14px",
@@ -160,6 +161,17 @@ module.exports = {
         md: "24px",
         lg: "30px",
         pill: "100px",
+      },
+
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      
+      animation: {
+        fadeIn: "fadeIn 0.8s ease-out forwards",
       },
     },
   },
