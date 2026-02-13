@@ -23,7 +23,7 @@
     <header class="bg-gray-400 fixed top-0 left-0 w-full z-10">
       <nav class="max-w-320 mx-auto px-2 bg-transparent">
         <div class="flex items-center pt-xs pb-3xl">
-          <a href="#" class="text-logo text-link"> Area </a>
+          <a href="#" class="text-logo text-text-link"> Area </a>
 
           <div class="flex-1 flex justify-center">
             <ul class="flex gap-lg">
@@ -61,7 +61,7 @@
 
             <a
               href="#"
-              class="group hidden lg:inline-flex items-center px-sm py-xxs gap-xxxs bg-accent-1 hover:bg-accent-3 text-background rounded-pill"
+              class="group hidden lg:inline-flex items-center px-sm py-xxs gap-xxxs bg-accent-1 hover:bg-accent-3 text-background rounded-pill transition-colors duration-300 ease-out"
             >
               Learn More
               <img
@@ -148,12 +148,11 @@
 
       <section id="benefits" class="benefits">
         <div class="max-w-320 mx-auto px-2 pb-6xl">
-          <div class="divider"></div>
-          <div class="benefits__content flex flex-col gap-3xl pt-4xl pb-3xl">
+          <div class="benefits__content border-t border-divider flex flex-col gap-3xl pt-4xl pb-3xl">
             <div class="flex flex-col gap-3xl">
               <p class="text-captions text-text-captions">Benefits</p>
 
-              <h2 class="text-heading-1 text-headline">
+              <h2 class="text-heading-1 text-headline cq">
                 We’ve cracked the code.
               </h2>
               <p class="text-paragraph text-text-paragraph">
@@ -161,23 +160,23 @@
               </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-xl">
-              <div class="benefits__item flex flex-col gap-md py-xl pr-xs">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-sm pt-xl">
+              <div class="benefits__item flex flex-col gap-md py-xl pr-xs border-t border-divider">
                 <span class="benefits__icon material-symbols-outlined">
                   cable
                 </span>
-                <h5 class="text-heading-3 text-headline">Amplify Insights</h5>
+                <h5 class="font-display text-heading-3 text-headline">Amplify Insights</h5>
                 <p class="text-paragraph text-text-paragraph">
                   Unlock data-driven decisions with comprehensive analytics,
                   revealing key opportunities for strategic regional growth.
                 </p>
               </div>
 
-              <div class="benefits__item flex flex-col gap-md py-xl pr-xs">
+              <div class="benefits__item flex flex-col gap-md py-xl pr-xs border-t border-divider">
                 <span class="benefits__icon material-symbols-outlined">
                   globe
                 </span>
-                <h5 class="text-heading-3 text-headline">
+                <h5 class="font-display text-heading-3 text-headline">
                   Control Your Global Presence
                 </h5>
                 <p class="text-paragraph text-text-paragraph">
@@ -186,11 +185,11 @@
                 </p>
               </div>
 
-              <div class="benefits__item flex flex-col gap-md py-xl pr-xs">
+              <div class="benefits__item flex flex-col gap-md py-xl pr-xs border-t border-divider">
                 <span class="benefits__icon material-symbols-outlined">
                   connect_without_contact
                 </span>
-                <h5 class="text-heading-3 text-headline">
+                <h5 class="font-display text-heading-3 text-headline">
                   Remove Language Barriers
                 </h5>
                 <p class="text-paragraph text-text-paragraph">
@@ -199,11 +198,11 @@
                 </p>
               </div>
 
-              <div class="benefits__item flex flex-col gap-md py-xl pr-xs">
+              <div class="benefits__item flex flex-col gap-md py-xl pr-xs border-t border-divider">
                 <span class="benefits__icon material-symbols-outlined">
                   timeline
                 </span>
-                <h5 class="text-heading-3 text-headline">Visualize Growth</h5>
+                <h5 class="font-display text-heading-3 text-headline">Visualize Growth</h5>
                 <p class="text-paragraph text-text-paragraph">
                   Generate precise, visually compelling reports that illustrate
                   your growth trajectories across all regions.
@@ -224,81 +223,68 @@
         </div>
       </section>
 
-      <section class="features pb-space-6xl">
-        <div class="container-xxl">
-          <div class="row align-items-center">
-            <div class="col-12 col-xl-6 features__content">
-              <div class="divider"></div>
-              <div class="d-flex flex-column gap-2xl pt-space-3xl pb-space-4xl">
-                <div class="d-flex flex-column gap-2xl pr-space-4xl">
-                  <h2 class="ag-heading-1 m-0">See the Big Picture</h2>
-                  <p class="ag-paragraph m-0">
+      <section class="features">
+        <div class="max-w-320 mx-auto px-2 pb-6xl">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            <div
+              class="features__content relative before:absolute before:top-0 before:h-px before:w-full before:bg-divider"
+            >
+              <div class="flex flex-col pt-3xl pb-4xl gap-2xl">
+                <div class="flex flex-col gap-2xl pr-0 lg:pr-4xl cq">
+                  <h2 class="text-heading-1">See the Big Picture</h2>
+                  <p class="text-paragraph text-text-paragraph">
                     Area turns your data into clear, vibrant visuals that show
                     you exactly what’s happening in each region.
                   </p>
                 </div>
 
-                <ul class="features__list d-flex flex-column list-unstyled m-0">
-                  <li
-                    class="features__item d-flex gap-xl py-space-xs pr-space-4xl"
-                  >
-                    <span class="ag-paragraph fw-bold">01</span>
-                    <p class="features__text ag-paragraph m-0">
+                <ul class="features__list flex flex-col">
+                  <li class="features__item flex gap-xl py-xs pr-0 lg:pr-4xl">
+                    <span class="text-text-paragraph font-bold">01</span>
+                    <p class="features__text text-paragraph">
                       Spot Trends in Seconds: No more digging through numbers.
                     </p>
                   </li>
 
-                  <li
-                    class="features__item d-flex gap-xl py-space-xs pr-space-4xl"
-                  >
-                    <span class="ag-paragraph fw-bold">02</span>
-                    <p class="features__text ag-paragraph m-0">
+                  <li class="features__item flex gap-xl py-xs pr-0 lg:pr-4xl">
+                    <span class="text-text-paragraph font-bold">02</span>
+                    <p class="features__text text-paragraph">
                       Get Everyone on the Same Page: Share easy-to-understand
                       reports with your team.
                     </p>
                   </li>
 
-                  <li
-                    class="features__item d-flex gap-xl py-space-xs pr-space-4xl"
-                  >
-                    <span class="ag-paragraph fw-bold">03</span>
-                    <p class="features__text ag-paragraph m-0">
+                  <li class="features__item flex gap-xl py-xs pr-0 lg:pr-4xl">
+                    <span class="text-text-paragraph font-bold">03</span>
+                    <p class="features__text text-paragraph">
                       Make Presentations Pop: Interactive maps and dashboards
                       keep your audience engaged.
                     </p>
                   </li>
 
-                  <li
-                    class="features__item d-flex gap-xl py-space-xs pr-space-4xl"
-                  >
-                    <span class="ag-paragraph fw-bold">04</span>
-                    <p class="features__text ag-paragraph m-0">
+                  <li class="features__item flex gap-xl py-xs pr-0 lg:pr-4xl">
+                    <span class="text-text-paragraph font-bold">04</span>
+                    <p class="features__text text-paragraph">
                       Your Global Snapshot: Get a quick, clear overview of your
                       entire operation.
                     </p>
                   </li>
                 </ul>
 
-                <div>
-                  <a
-                    href="#"
-                    class="btn btn-secondary ag-link rounded-pill py-space-xxs px-space-sm"
-                  >
-                    Discover More
-                  </a>
-                </div>
+                <a
+                  href="#"
+                  class="self-start inline-block bg-accent-2 hover:bg-accent-3 text-link text-text-link hover:text-background rounded-pill py-xxs px-sm transition-colors duration-300 ease-out"
+                >
+                  Discover More
+                </a>
               </div>
             </div>
 
-            <div class="col-12 col-xl-6">
-              <div class="features__media">
-                <img
-                  src="./assets/img/Features carousel v1.png"
-                  alt=""
-                  class="features__image w-100 radius-lg"
-                />
-              </div>
-            </div>
+            <img
+              src="./assets/img/Features carousel v1.png"
+              alt=""
+              class="features__image w-full h-100 lg:h-178 md:h-185 rounded-lg object-cover"
+            />
           </div>
         </div>
       </section>
