@@ -29,7 +29,7 @@ module.exports = {
         ],
 
         "heading-1": [
-          "clamp(32px, 6cqw, 60px)",
+          "clamp(50px, 6cqw, 60px)",
           {
             lineHeight: "0.9",
             letterSpacing: "-0.03em",

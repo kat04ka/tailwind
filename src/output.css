@@ -188,9 +188,6 @@
   .z-10 {
     z-index: 10;
   }
-  .col-12 {
-    grid-column: 12;
-  }
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
@@ -208,9 +205,6 @@
   }
   .inline-block {
     display: inline-block;
-  }
-  .table {
-    display: table;
   }
   .h-91 {
     height: calc(var(--spacing) * 91);
@@ -236,11 +230,11 @@
   .max-w-320 {
     max-width: calc(var(--spacing) * 320);
   }
+  .min-w-62 {
+    min-width: calc(var(--spacing) * 62);
+  }
   .flex-1 {
     flex: 1;
-  }
-  .border-collapse {
-    border-collapse: collapse;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -251,8 +245,14 @@
   .cursor-pointer {
     cursor: pointer;
   }
-  .resize {
-    resize: both;
+  .snap-x {
+    scroll-snap-type: x var(--tw-scroll-snap-strictness);
+  }
+  .snap-mandatory {
+    --tw-scroll-snap-strictness: mandatory;
+  }
+  .snap-start {
+    scroll-snap-align: start;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -275,6 +275,12 @@
   .items-end {
     align-items: flex-end;
   }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
   .justify-center {
     justify-content: center;
   }
@@ -283,6 +289,9 @@
   }
   .gap-3xl {
     gap: 50px;
+  }
+  .gap-4xl {
+    gap: 60px;
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
@@ -316,6 +325,12 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .scroll-smooth {
+    scroll-behavior: smooth;
   }
   .rounded {
     border-radius: 0.25rem;
@@ -415,6 +430,9 @@
   .pr-0 {
     padding-right: calc(var(--spacing) * 0);
   }
+  .pr-lg {
+    padding-right: 30px;
+  }
   .pr-xs {
     padding-right: 20px;
   }
@@ -426,6 +444,9 @@
   }
   .pb-6xl {
     padding-bottom: 120px;
+  }
+  .pb-sm {
+    padding-bottom: 22px;
   }
   .pb-xl {
     padding-bottom: 40px;
@@ -448,8 +469,14 @@
     letter-spacing: var(--tw-tracking, -0.0425em);
     font-weight: var(--tw-font-weight, 400);
   }
+  .text-display-stats {
+    font-size: 80px;
+    line-height: var(--tw-leading, 1);
+    letter-spacing: var(--tw-tracking, -0.025em);
+    font-weight: var(--tw-font-weight, 400);
+  }
   .text-heading-1 {
-    font-size: clamp(32px, 6cqw, 60px);
+    font-size: clamp(50px, 6cqw, 60px);
     line-height: var(--tw-leading, 0.9);
     letter-spacing: var(--tw-tracking, -0.03em);
     font-weight: var(--tw-font-weight, 400);
@@ -493,16 +520,12 @@
     line-height: var(--tw-leading, 1.4);
     letter-spacing: var(--tw-tracking, -0.005em);
   }
-  .text-\[32px\] {
-    font-size: 32px;
-  }
-  .leading-\[1\] {
-    --tw-leading: 1;
-    line-height: 1;
-  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+  }
+  .text-accent-6 {
+    color: #929292;
   }
   .text-background {
     color: #ffffff;
@@ -519,15 +542,8 @@
   .text-text-paragraph {
     color: #6f6f6f;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .opacity-0 {
     opacity: 0%;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
@@ -610,11 +626,6 @@
       }
     }
   }
-  .sm\:text-\[32px\] {
-    @media (width >= 40rem) {
-      font-size: 32px;
-    }
-  }
   .md\:h-185 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 185);
@@ -630,14 +641,24 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
+  }
+  .md\:items-center {
+    @media (width >= 48rem) {
+      align-items: center;
+    }
+  }
   .md\:px-4xl {
     @media (width >= 48rem) {
       padding-inline: 80px;
     }
   }
-  .md\:text-\[32px\] {
-    @media (width >= 48rem) {
-      font-size: 32px;
+  .lg\:grid {
+    @media (width >= 64rem) {
+      display: grid;
     }
   }
   .lg\:hidden {
@@ -670,9 +691,19 @@
       height: calc(var(--spacing) * 178);
     }
   }
+  .lg\:min-w-0 {
+    @media (width >= 64rem) {
+      min-width: calc(var(--spacing) * 0);
+    }
+  }
   .lg\:grid-cols-2 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .lg\:grid-cols-4 {
@@ -695,6 +726,11 @@
       gap: 40px;
     }
   }
+  .lg\:overflow-visible {
+    @media (width >= 64rem) {
+      overflow: visible;
+    }
+  }
   .lg\:px-7xl {
     @media (width >= 64rem) {
       padding-inline: 240px;
@@ -713,19 +749,6 @@
   .lg\:pl-2xl {
     @media (width >= 64rem) {
       padding-left: 50px;
-    }
-  }
-  .lg\:text-heading-2 {
-    @media (width >= 64rem) {
-      font-size: clamp(32px, 6cqw, 40px);
-      line-height: var(--tw-leading, 1);
-      letter-spacing: var(--tw-tracking, -0.04em);
-      font-weight: var(--tw-font-weight, 400);
-    }
-  }
-  .lg\:text-\[32px\] {
-    @media (width >= 64rem) {
-      font-size: 32px;
     }
   }
 }
@@ -755,23 +778,19 @@ body {
   syntax: "*";
   inherits: false;
 }
+@property --tw-scroll-snap-strictness {
+  syntax: "*";
+  inherits: false;
+  initial-value: proximity;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
 }
-@property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-duration {
   syntax: "*";
@@ -819,10 +838,9 @@ body {
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
+      --tw-scroll-snap-strictness: proximity;
       --tw-border-style: solid;
-      --tw-leading: initial;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
       --tw-duration: initial;
       --tw-ease: initial;
       --tw-translate-x: 0;
