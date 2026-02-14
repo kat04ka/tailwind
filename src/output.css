@@ -231,6 +231,9 @@
   .inline-block {
     display: inline-block;
   }
+  .inline-flex {
+    display: inline-flex;
+  }
   .table {
     display: table;
   }
@@ -437,11 +440,26 @@
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-3xl {
+    padding-inline: 60px;
+  }
+  .px-5xl {
+    padding-inline: 100px;
+  }
   .px-lg {
     padding-inline: 30px;
   }
+  .px-pill {
+    padding-inline: 300px;
+  }
   .px-sm {
     padding-inline: 22px;
+  }
+  .px-xs {
+    padding-inline: 20px;
   }
   .px-xxs {
     padding-inline: 14px;
@@ -451,6 +469,9 @@
   }
   .py-4xl {
     padding-block: 80px;
+  }
+  .py-6xl {
+    padding-block: 120px;
   }
   .py-xl {
     padding-block: 40px;
@@ -717,6 +738,11 @@
       padding-inline: 80px;
     }
   }
+  .md\:px-5xl {
+    @media (width >= 48rem) {
+      padding-inline: 100px;
+    }
+  }
   .lg\:grid {
     @media (width >= 64rem) {
       display: grid;
@@ -800,6 +826,11 @@
   .lg\:px-7xl {
     @media (width >= 64rem) {
       padding-inline: 240px;
+    }
+  }
+  .lg\:px-pill {
+    @media (width >= 64rem) {
+      padding-inline: 300px;
     }
   }
   .lg\:pt-0 {
