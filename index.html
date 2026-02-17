@@ -7,147 +7,168 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?
-      family=DM+Sans:wght@400;500;700&
-      family=Roboto+Mono:wght@400;500&
-      family=Crimson+Text:wght@400&
-      family=Rethink+Sans:wght@500&
-      family=Reddit+Mono:wght@500&
-      display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto+Mono:wght@400;500&family=Crimson+Text:wght@400&family=Rethink+Sans:wght@500&family=Reddit+Mono:wght@500&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cable"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="./src/output.css" />
   </head>
 
   <body>
     <input type="checkbox" id="themeToggle" class="theme-toggle" hidden />
 
-    <header>
-      <nav class="navbar navbar-expand-lg fixed-top bg-transparent">
-        <div class="container-xxl align-items-center">
-          <a class="navbar-brand ag-logo" href="#">Area</a>
+    <header class="fixed top-0 left-0 w-full z-1">
+      <nav class="max-w-320 mx-auto px-2">
+        <div class="flex items-center justify-between pt-xxs pb-2xl">
+          <a href="#" class="text-logo text-text-link"> Area </a>
 
-          <div
-            class="collapse navbar-collapse justify-content-center d-none d-lg-flex"
-          >
-            <ul
-              class="navbar-nav gap-lg px-space-xs py-space-md nav-links-wrapper"
-            >
-              <li class="nav-item">
-                <a class="nav-link ag-link p-0" href="#benefits">Benefits</a>
+          <div class="hidden lg:flex flex-1 justify-center ">
+            <ul class="flex gap-lg px-xs py-md rounded-pill backdrop-blur-[15px] bg-white/40 supports-backdrop-filter:bg-white/40">
+              <li>
+                <a href="#benefits" class="text-link hover:text-accent-6">
+                  Benefits
+                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ag-link p-0" href="#specs">Specifications</a>
+              <li>
+                <a href="#specs" class="text-link hover:text-accent-6">
+                  Specifications
+                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ag-link p-0" href="#steps">How-to</a>
+              <li>
+                <a href="#steps" class="text-link hover:text-accent-6">
+                  How-to
+                </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link ag-link p-0" href="#connect">Contact Us</a>
+              <li>
+                <a href="#connect" class="text-link hover:text-accent-6">
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>
 
-          <div class="d-flex align-items-center gap-sm ms-auto">
+          <div class="flex  gap-sm">
             <label
               for="themeToggle"
-              class="theme-switch btn btn-outline-secondary d-inline-flex align-items-center"
+              class="flex items-center cursor-pointer gap-xxxs"
             >
-              <span class="icon-light">☀️</span>
-              <span class="icon-dark">🌙</span>
+              <span>☀️</span>
+              <span>🌙</span>
             </label>
 
             <a
-              class="btn btn-cta d-none d-lg-inline-flex align-items-center ag-link gap-xxxs"
               href="#"
+              class="group hidden lg:inline-flex items-center text-link px-sm py-xxs gap-xxxs bg-accent-1 hover:bg-accent-3 text-background rounded-pill transition-colors duration-300 ease-out"
             >
               Learn More
-              <img class="btn-cta__arrow" src="./assets/img/arrow.png" alt="" />
+              <img
+                src="./assets/img/arrow.png"
+                alt=""
+                class="inline-block transition-transform duration-200 ease-out group-hover:-translate-y-1"
+              />
             </a>
 
             <button
-              class="navbar-toggler d-lg-none"
+              id="burgerBtn"
+              class="lg:hidden relative w-8 h-8 flex items-center justify-center group"
               type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#mobileNav"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span class="sr-only">Toggle menu</span>
+
+              <div class="relative w-6 h-5">
+                <span
+                  class="burger-line absolute left-0 top-0 w-full h-0.5 bg-current transition-all duration-300"
+                ></span>
+                <span
+                  class="burger-line absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-current transition-all duration-300"
+                ></span>
+                <span
+                  class="burger-line absolute left-0 bottom-0 w-full h-0.5 bg-current transition-all duration-300"
+                ></span>
+              </div>
             </button>
           </div>
         </div>
       </nav>
 
       <div
-        class="offcanvas offcanvas-end d-lg-none"
-        tabindex="-1"
-        id="mobileNav"
+        id="mobileMenu"
+        class="fixed inset-0 z-2 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
       >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title ag-logo">Area</h5>
-          <button class="btn-close" data-bs-dismiss="offcanvas"></button>
-        </div>
+        <div
+          class="absolute top-0 left-0 w-full bg-background shadow-xl transform -translate-y-full transition-transform duration-300"
+        >
+          <div
+            class="max-w-320 mx-auto px-2 py-xl flex items-center justify-between border-b border-divider"
+          >
+            <a href="#" class="text-logo text-text-link"> Area </a>
 
-        <div class="offcanvas-body d-flex flex-column gap-3xl">
-          <ul class="navbar-nav gap-lg">
-            <li class="nav-item">
-              <a class="nav-link ag-link js-scroll" href="#benefits"
-                >Benefits</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link ag-link js-scroll" href="#specs"
-                >Specifications</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link ag-link js-scroll" href="#steps">How-to</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link ag-link js-scroll" href="#connect"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
+            <button
+              id="mobileClose"
+              class="relative w-8 h-8 flex items-center justify-center"
+              type="button"
+            >
+              <div class="relative w-6 h-5">
+                <span
+                  class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-current rotate-45"
+                ></span>
+                <span
+                  class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-current -rotate-45"
+                ></span>
+              </div>
+            </button>
+          </div>
 
-          <a class="btn btn-cta mt-auto" href="#">
-            Learn More
-            <img class="header_arrow" src="./assets/img/arrow.png" alt="" />
-          </a>
+          <div class="max-w-320 mx-auto px-2 py-xl flex flex-col gap-xl">
+            <a href="#benefits" class="text-link mobile-link"
+              >Benefits</a
+            >
+            <a href="#specs" class="text-link mobile-link"
+              >Specifications</a
+            >
+            <a href="#steps" class="text-link mobile-link">How-to</a>
+            <a href="#connect" class="text-link mobile-link"
+              >Contact Us</a
+            >
+
+            <a
+              href="#"
+              class="group inline-flex items-center self-start text-link px-sm py-xxs gap-xxxs bg-accent-1 hover:bg-accent-3 text-background rounded-pill transition-colors duration-300 ease-out"
+            >
+              Learn More
+              <img
+                src="./assets/img/arrow.png"
+                alt=""
+                class="inline-block transition-transform duration-200 ease-out group-hover:-translate-y-1"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </header>
 
     <main class="main">
       <section class="hero">
-        <div class="container-xxl">
-          <div class="d-flex flex-column gap-5xl pt-space-6xl">
-            <h2 class="hero__heading ag-display text-center">
+        <div class="max-w-320 mx-auto px-2 z-0">
+          <div class="flex flex-col gap-5xl pt-6xl pb-xl">
+            <h2 class="text-display text-center font-display text-headline">
               Browse everything.
             </h2>
-           
 
-            <div class="hero__visual">
-              <div class="hero__background"></div>
+            <div class="relative flex justify-center items-end">
+              <div
+                class="absolute bottom-0 w-full bg-center h-91 rounded-4xl"
+                style="background-image: url(assets/img/bg.png)"
+              ></div>
 
-              <div class="hero__mask">
+              <div class="relative h-110 lg:h-132 overflow-hidden">
                 <picture>
                   <source
                     srcset="./assets/img/hero-desktop.png"
-                    media="(min-width: 1200px)"
+                    media="(min-width: 1024px)"
                   />
 
                   <source
@@ -157,7 +178,7 @@
                   <img
                     src="./assets/img/hero-mobile.png"
                     alt="hero preview"
-                    class="hero__image"
+                    class="hero__image object-cover opacity-0 animate-fadeIn"
                   />
                 </picture>
               </div>
@@ -167,28 +188,28 @@
       </section>
 
       <section class="logo-cloud">
-        <div class="container-xxl">
-          <div class="d-flex flex-column gap-lg py-space-2xl">
-            <p class="ag-paragraph m-0">Trusted by:</p>
+        <div class="max-w-320 mx-auto px-2">
+          <div class="flex flex-col gap-xl py-2xl">
+            <p class="text-paragraph text-text-paragraph">Trusted by:</p>
             <ul
-              class="d-flex align-items-center justify-content-center gap-2xl list-unstyled flex-wrap m-0"
+              class="flex flex-wrap items-center justify-center gap-xl lg:gap-2xl"
             >
-              <li class="p-space-xs">
+              <li class="p-xs">
                 <img src="./assets/img/Logo 1.png" alt="Logo 1" />
               </li>
-              <li class="p-space-xs">
+              <li class="p-xs">
                 <img src="./assets/img/Logo 2.png" alt="Logo 2" />
               </li>
-              <li class="p-space-xs">
+              <li class="p-xs">
                 <img src="./assets/img/Logo 3.png" alt="Logo 3" />
               </li>
-              <li class="p-space-xs">
+              <li class="p-xs">
                 <img src="./assets/img/Logo 4.png" alt="Logo 4" />
               </li>
-              <li class="p-space-xs">
+              <li class="p-xs">
                 <img src="./assets/img/Logo 5.png" alt="Logo 5" />
               </li>
-              <li class="p-space-xs">
+              <li class="p-xs">
                 <img src="./assets/img/Logo 6.png" alt="Logo 6" />
               </li>
             </ul>
@@ -196,365 +217,427 @@
         </div>
       </section>
 
-      <section id="benefits" class="benefits pb-space-6xl">
-        <div class="container-xxl">
-          <div class="divider"></div>
+      <section id="benefits" class="benefits">
+        <div class="max-w-320 mx-auto px-2 pb-6xl">
           <div
-            class="benefits__content d-flex flex-column gap-3xl pt-space-4xl pb-space-3xl"
+            class="flex flex-col gap-3xl pt-4xl pb-3xl border-t border-divider"
           >
-            <div class="d-flex flex-column gap-3xl">
-              <p class="ag-captions m-0">Benefits</p>
-              <h2 class="ag-heading-1 m-0">We’ve cracked the code.</h2>
-              <p class="ag-paragraph m-0">
+            <div class="flex flex-col gap-3xl">
+              <p class="text-captions text-text-captions">Benefits</p>
+
+              <h2 class="text-heading-1 text-headline cq">
+                We’ve cracked the code.
+              </h2>
+              <p class="text-paragraph text-text-paragraph">
                 Area provides real insights, without the data overload.
               </p>
             </div>
 
-            <div class="row pt-space-xl">
-              <div class="col-12 col-md-6 col-lg-3">
-                <div
-                  class="benefits__item py-space-xl pr-space-xs d-flex flex-column gap-md"
-                >
-                  <span class="benefits__icon material-symbols-outlined">
-                    cable
-                  </span>
-                  <h5 class="ag-heading-3 m-0">Amplify Insights</h5>
-                  <p class="ag-paragraph m-0">
-                    Unlock data-driven decisions with comprehensive analytics,
-                    revealing key opportunities for strategic regional growth.
-                  </p>
-                </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-sm pt-xl"
+            >
+              <div
+                class="flex flex-col gap-md py-xl pr-xs border-t border-divider"
+              >
+                <span class="material-symbols-outlined"> cable </span>
+                <h5 class="font-display text-heading-3 text-headline">
+                  Amplify Insights
+                </h5>
+                <p class="text-paragraph text-text-paragraph">
+                  Unlock data-driven decisions with comprehensive analytics,
+                  revealing key opportunities for strategic regional growth.
+                </p>
               </div>
 
-              <div class="col-12 col-md-6 col-lg-3">
-                <div
-                  class="benefits__item py-space-xl pr-space-xs d-flex flex-column gap-md"
-                >
-                  <i class="benefits__icon bi bi-globe-americas"></i>
-                  <h5 class="ag-heading-3 m-0">
-                    Control Your Global Presence
-                  </h5>
-                  <p class="ag-paragraph m-0">
-                    Manage and track satellite offices, ensuring consistent
-                    performance and streamlined operations everywhere.
-                  </p>
-                </div>
+              <div
+                class="flex flex-col gap-md py-xl pr-xs border-t border-divider"
+              >
+                <span class="material-symbols-outlined"> globe </span>
+                <h5 class="font-display text-heading-3 text-headline">
+                  Control Your Global Presence
+                </h5>
+                <p class="text-paragraph text-text-paragraph">
+                  Manage and track satellite offices, ensuring consistent
+                  performance and streamlined operations everywhere.
+                </p>
               </div>
 
-              <div class="col-12 col-md-6 col-lg-3">
-                <div
-                  class="benefits__item py-space-xl pr-space-xs d-flex flex-column gap-md"
-                >
-                  <i class="benefits__icon bi bi-person-lines-fill"></i>
-                  <h5 class="ag-heading-3 m-0">Remove Language Barriers</h5>
-                  <p class="ag-paragraph m-0">
-                    Adapt to diverse markets with built-in localization for
-                    clear communication and enhanced user experience.
-                  </p>
-                </div>
+              <div
+                class="flex flex-col gap-md py-xl pr-xs border-t border-divider"
+              >
+                <span class="material-symbols-outlined">
+                  connect_without_contact
+                </span>
+                <h5 class="font-display text-heading-3 text-headline">
+                  Remove Language Barriers
+                </h5>
+                <p class="text-paragraph text-text-paragraph">
+                  Adapt to diverse markets with built-in localization for clear
+                  communication and enhanced user experience.
+                </p>
               </div>
 
-              <div class="col-12 col-md-6 col-lg-3">
-                <div
-                  class="benefits__item py-space-xl pr-space-xs d-flex flex-column gap-md"
-                >
-                  <i class="benefits__icon bi bi-graph-up"></i>
-                  <h5 class="ag-heading-3 m-0">Visualize Growth</h5>
-                  <p class="ag-paragraph m-0">
-                    Generate precise, visually compelling reports that
-                    illustrate your growth trajectories across all regions.
-                  </p>
-                </div>
+              <div
+                class="flex flex-col gap-md py-xl pr-xs border-t border-divider"
+              >
+                <span class="material-symbols-outlined"> timeline </span>
+                <h5 class="font-display text-heading-3 text-headline">
+                  Visualize Growth
+                </h5>
+                <p class="text-paragraph text-text-paragraph">
+                  Generate precise, visually compelling reports that illustrate
+                  your growth trajectories across all regions.
+                </p>
               </div>
             </div>
           </div>
 
-          <div class="container-xxl px-0">
-            <div class="benefits__media radius-lg overflow-hidden">
+          <div class="max-w-320 mx-auto px-0">
+            <div class="benefits__media rounded-4xl overflow-hidden">
               <img
                 src="./assets/img/benefits__hero-image.png"
                 alt=""
-                class="benefits__image"
+                class="benefits__image w-full min-h-150 object-cover animate-fadeIn"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section class="features pb-space-6xl">
-        <div class="container-xxl">
-          <div class="row align-items-center">
-            <div class="col-12 col-xl-6 features__content">
-              <div class="divider"></div>
-              <div class="d-flex flex-column gap-2xl pt-space-3xl pb-space-4xl">
-                <div class="d-flex flex-column gap-2xl pr-space-4xl">
-                  <h2 class="ag-heading-1 m-0">See the Big Picture</h2>
-                  <p class="ag-paragraph m-0">
+      <section class="features">
+        <div class="max-w-320 mx-auto px-2 pb-6xl">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            <div
+              class="relative before:content-[''] before:absolute before:top-0 before:h-px before:w-full before:bg-divider"
+            >
+              <div class="flex flex-col pt-3xl pb-4xl gap-2xl">
+                <div class="flex flex-col gap-2xl pr-0 lg:pr-4xl cq">
+                  <h2 class="text-heading-1">See the Big Picture</h2>
+                  <p class="text-paragraph text-text-paragraph">
                     Area turns your data into clear, vibrant visuals that show
                     you exactly what’s happening in each region.
                   </p>
                 </div>
 
-                <ul class="features__list d-flex flex-column list-unstyled m-0">
+                <ul class="flex flex-col">
                   <li
-                    class="features__item d-flex gap-xl py-space-xs pr-space-4xl"
+                    class="flex gap-xl py-xs pr-0 lg:pr-4xl border-t border-divider"
                   >
-                    <span class="ag-paragraph fw-bold">01</span>
-                    <p class="features__text ag-paragraph m-0">
+                    <span class="text-text-paragraph font-bold">01</span>
+                    <p class="features__text text-paragraph">
                       Spot Trends in Seconds: No more digging through numbers.
                     </p>
                   </li>
 
                   <li
-                    class="features__item d-flex gap-xl py-space-xs pr-space-4xl"
+                    class="flex gap-xl py-xs pr-0 lg:pr-4xl border-t border-divider"
                   >
-                    <span class="ag-paragraph fw-bold">02</span>
-                    <p class="features__text ag-paragraph m-0">
+                    <span class="text-text-paragraph font-bold">02</span>
+                    <p class="features__text text-paragraph">
                       Get Everyone on the Same Page: Share easy-to-understand
                       reports with your team.
                     </p>
                   </li>
 
                   <li
-                    class="features__item d-flex gap-xl py-space-xs pr-space-4xl"
+                    class="flex gap-xl py-xs pr-0 lg:pr-4xl border-t border-divider"
                   >
-                    <span class="ag-paragraph fw-bold">03</span>
-                    <p class="features__text ag-paragraph m-0">
+                    <span class="text-text-paragraph font-bold">03</span>
+                    <p class="features__text text-paragraph">
                       Make Presentations Pop: Interactive maps and dashboards
                       keep your audience engaged.
                     </p>
                   </li>
 
                   <li
-                    class="features__item d-flex gap-xl py-space-xs pr-space-4xl"
+                    class="flex gap-xl py-xs pr-0 lg:pr-4xl border-t border-divider"
                   >
-                    <span class="ag-paragraph fw-bold">04</span>
-                    <p class="features__text ag-paragraph m-0">
+                    <span class="text-text-paragraph font-bold">04</span>
+                    <p class="features__text text-paragraph">
                       Your Global Snapshot: Get a quick, clear overview of your
                       entire operation.
                     </p>
                   </li>
                 </ul>
 
-                <div>
-                  <a
-                    href="#"
-                    class="btn btn-secondary ag-link rounded-pill py-space-xxs px-space-sm"
-                  >
-                    Discover More
-                  </a>
-                </div>
+                <a
+                  href="#"
+                  class="self-start inline-block bg-accent-2 hover:bg-accent-3 text-link text-text-link hover:text-background rounded-pill py-xxs px-sm transition-colors duration-300 ease-out"
+                >
+                  Discover More
+                </a>
               </div>
             </div>
 
-            <div class="col-12 col-xl-6">
-              <div class="features__media">
-                <img
-                  src="./assets/img/Features carousel v1.png"
-                  alt=""
-                  class="features__image w-100 radius-lg"
-                />
-              </div>
-            </div>
+            <img
+              src="./assets/img/Features carousel v1.png"
+              alt=""
+              class="w-full h-100 md:h-185 lg:h-178 rounded-lg object-cover animate-fadeIn"
+            />
           </div>
         </div>
       </section>
 
       <section id="specs" class="specs">
-        <div class="container-xxl">
-          <div class="divider"></div>
-          <div class="d-flex flex-column gap-sm pb-space-6xl">
+        <div class="max-w-320 mx-auto px-2">
+          <div class="flex flex-col gap-sm pb-6xl">
             <div
-              class="specs__head text-center d-flex flex-column gap-2xl py-space-4xl px-space-7xl"
+              class="text-center flex flex-col gap-2xl py-4xl px-xxs lg:px-7xl md:px-4xl border-t border-divider"
             >
-              <span class="specs__title ag-captions">Specs</span>
+              <span class="font-mono text-captions text-text-captions">
+                Specs
+              </span>
 
-              <h2 class="ag-heading-1">Why Choose Area?</h2>
+              <h2 class="font-display text-heading-1">Why Choose Area?</h2>
 
-              <p class="ag-paragraph">
+              <p class="text-paragraph text-text-paragraph">
                 You need a solution that keeps up. That’s why we developed Area.
                 A developer-friendly approach to streamline your business.
               </p>
 
               <a
                 href="#"
-                class="btn btn-secondary ag-link rounded-pill py-space-xxs px-space-sm align-self-center"
+                class="self-center inline-block bg-accent-2 hover:bg-accent-3 text-link text-text-link hover:text-background rounded-pill py-xxs px-sm transition-colors duration-300 ease-out"
               >
                 Discover More
               </a>
             </div>
 
-            <div class="specs__scroll border rounded">
-              <div class="row flex-nowrap">
-                <div class="col-md-4 p-0 border-end specs__column-wrapper">
+            <div
+              class="overflow-x-auto snap-x snap-mandatory scroll-smooth border border-divider"
+            >
+              <div class="flex">
+                <div
+                  data-column
+                  class="flex-1 min-w-68 snap-start border-r border-divider group relative cursor-pointer transition-all duration-300 ease-out hover:bg-divider/40 data-[active=true]:bg-divider/60"
+                >
                   <div
-                    class="ag-table-title text-center py-space-xl px-space-lg"
+                    class="text-table-title text-text-paragraph text-center py-xl px-lg border-b border-divider"
                   >
                     Area
                   </div>
 
-                  <ul class="specs__column list-unstyled m-0">
+                  <ul>
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-check2"></i>
-                      <span class="specs__text ag-captions"
-                        >Ultra-fast browsing</span
+                      <span
+                        class="material-symbols-outlined text-green-500 text-base"
                       >
+                        check
+                      </span>
+                      <span class="text-captions">Ultra-fast browsing</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-check2"></i>
-                      <span class="specs__text ag-captions"
-                        >Advanced AI insights</span
+                      <span
+                        class="material-symbols-outlined text-green-500 text-base"
                       >
+                        check
+                      </span>
+                      <span class="text-captions">Advanced AI insights</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-check2"></i>
-                      <span class="specs__text ag-captions"
-                        >Seamless integration</span
+                      <span
+                        class="material-symbols-outlined text-green-500 text-base"
                       >
+                        check
+                      </span>
+                      <span class="text-captions">Seamless integration</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-check2"></i>
-                      <span class="specs__text ag-captions"
-                        >Advanced AI insights</span
+                      <span
+                        class="material-symbols-outlined text-green-500 text-base"
                       >
+                        check
+                      </span>
+                      <span class="text-captions">Advanced AI insights</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-check2"></i>
-                      <span class="specs__text ag-captions"
-                        >Ultra-fast browsing</span
+                      <span
+                        class="material-symbols-outlined text-green-500 text-base"
                       >
+                        check
+                      </span>
+                      <span class="text-captions">Ultra-fast browsing</span>
                     </li>
-                    <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
-                    >
-                      <i class="bi bi-check2"></i>
-                      <span class="specs__text ag-captions"
-                        >Full UTF-8 support</span
+
+                    <li class="flex items-center gap-xxs p-lg">
+                      <span
+                        class="material-symbols-outlined text-green-500 text-base"
                       >
+                        check
+                      </span>
+                      <span class="text-captions">Full UTF-8 support</span>
                     </li>
                   </ul>
                 </div>
 
-                <div class="col-md-4 p-0 border-end specs__column-wrapper">
+                <div
+                  data-column
+                  class="flex-1 min-w-68 snap-start border-r border-divider group relative cursor-pointer transition-all duration-300 ease-out hover:bg-divider/40 data-[active=true]:bg-divider/60"
+                >
                   <div
-                    class="ag-table-title text-center py-space-xl px-space-lg"
+                    class="text-table-title text-text-paragraph text-center py-xl px-lg border-b border-divider"
                   >
                     WebSurge
                   </div>
 
-                  <ul class="specs__column list-unstyled m-0">
+                  <ul>
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-check2"></i>
-                      <span class="specs__text ag-captions">Fast browsing</span>
+                      <span
+                        class="material-symbols-outlined text-green-500 text-base"
+                      >
+                        check
+                      </span>
+                      <span class="text-captions">Fast browsing</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-check2"></i>
-                      <span class="specs__text ag-captions"
+                      <span
+                        class="material-symbols-outlined text-green-500 text-base"
+                      >
+                        check
+                      </span>
+                      <span class="text-captions"
                         >Basic AI recommendations</span
                       >
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-check2"></i>
-                      <span class="specs__text ag-captions"
-                        >Restricts customization</span
+                      <span
+                        class="material-symbols-outlined text-green-500 text-base"
                       >
+                        check
+                      </span>
+                      <span class="text-captions">Restricts customization</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-x-lg"></i>
-                      <span class="specs__text ag-captions"
-                        >Basic AI insights</span
+                      <span
+                        class="material-symbols-outlined text-red-500 text-base"
                       >
+                        close
+                      </span>
+                      <span class="text-captions">Basic AI insights</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-check2"></i>
-                      <span class="specs__text ag-captions">Fast browsing</span>
+                      <span
+                        class="material-symbols-outlined text-green-500 text-base"
+                      >
+                        check
+                      </span>
+                      <span class="text-captions">Fast browsing</span>
                     </li>
-                    <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
-                    >
-                      <i class="bi bi-x-lg"></i>
-                      <span class="specs__text ag-captions"
+
+                    <li class="flex items-center gap-xxs p-lg">
+                      <span
+                        class="material-symbols-outlined text-red-500 text-base"
+                      >
+                        close
+                      </span>
+                      <span class="text-captions"
                         >Potential display errors</span
                       >
                     </li>
                   </ul>
                 </div>
 
-                <div class="col-md-4 p-0 specs__column-wrapper">
+                <div
+                  data-column
+                  class="flex-1 min-w-68 snap-start group relative cursor-pointer transition-all duration-300 ease-out hover:bg-divider/40 data-[active=true]:bg-divider/60"
+                >
                   <div
-                    class="ag-table-title text-center py-space-xl px-space-lg"
+                    class="text-table-title text-text-paragraph text-center py-xl px-lg border-b border-divider"
                   >
                     HyperView
                   </div>
 
-                  <ul class="specs__column list-unstyled m-0">
+                  <ul>
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-x-lg"></i>
-                      <span class="specs__text ag-captions"
-                        >Moderate speeds</span
+                      <span
+                        class="material-symbols-outlined text-red-500 text-base"
                       >
+                        close
+                      </span>
+                      <span class="text-captions">Moderate speeds</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-x-lg"></i>
-                      <span class="specs__text ag-captions"
-                        >No AI assistance</span
+                      <span
+                        class="material-symbols-outlined text-red-500 text-base"
                       >
+                        close
+                      </span>
+                      <span class="text-captions">No AI assistance</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-x-lg"></i>
-                      <span class="specs__text ag-captions"
-                        >Steep learning curve</span
+                      <span
+                        class="material-symbols-outlined text-red-500 text-base"
                       >
+                        close
+                      </span>
+                      <span class="text-captions">Steep learning curve</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-x-lg"></i>
-                      <span class="specs__text ag-captions"
-                        >No AI assistance</span
+                      <span
+                        class="material-symbols-outlined text-red-500 text-base"
                       >
+                        close
+                      </span>
+                      <span class="text-captions">No AI assistance</span>
                     </li>
+
                     <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
+                      class="flex items-center gap-xxs p-lg border-b border-divider"
                     >
-                      <i class="bi bi-x-lg"></i>
-                      <span class="specs__text ag-captions"
-                        >Moderate speeds</span
+                      <span
+                        class="material-symbols-outlined text-red-500 text-base"
                       >
+                        close
+                      </span>
+                      <span class="text-captions">Moderate speeds</span>
                     </li>
-                    <li
-                      class="d-flex p-space-lg align-items-center gap-xxs border-top"
-                    >
-                      <i class="bi bi-x-lg"></i>
-                      <span class="specs__text ag-captions"
-                        >Partial UTF-8 support</span
+
+                    <li class="flex items-center gap-xxs p-lg">
+                      <span
+                        class="material-symbols-outlined text-red-500 text-base"
                       >
+                        close
+                      </span>
+                      <span class="text-captions">Partial UTF-8 support</span>
                     </li>
                   </ul>
                 </div>
@@ -565,11 +648,9 @@
       </section>
 
       <section class="testimonial">
-        <div class="container-xxl">
-          <div
-            class="testimonial__layout d-flex flex-column flex-xl-row pb-space-6xl gap-sm"
-          >
-            <div class="testimonial__media w-100 w-lg-50">
+        <div class="max-w-320 mx-auto px-2">
+          <div class="grid gap-sm lg:grid-cols-2 pb-6xl">
+            <div class="overflow-hidden">
               <picture>
                 <source
                   srcset="./assets/img/testimonial.png"
@@ -584,31 +665,29 @@
                 <img
                   src="./assets/img/testimonial-2.png"
                   alt="Testimonial image"
-                  class="img-fluid w-100 radius-lg"
+                  class="w-full md:h-220 lg:h-168 rounded-lg object-cover animate-fadeIn"
                 />
               </picture>
             </div>
 
-            <div class="testimonial__content d-flex flex-column w-100 w-lg-50">
-              <div class="testimonial__divider"></div>
+            <div
+              class="flex flex-col pl-0 lg:pl-2xl pt-xl lg:pt-0 border-t border-divider"
+            >
+              <div class="flex flex-col justify-center lg:h-167 gap-3xl">
+                <blockquote class="cq">
+                  <p class="font-display text-heading-2 w-full">
+                    “I was skeptical, but Area has completely transformed the
+                    way I manage my business. The data visualizations are so
+                    clear and intuitive, and the platform is so easy to use. I
+                    can't imagine running my company without it.”
+                  </p>
+                </blockquote>
 
-              <div class="testimonial__body pl-space-2xl">
-                <div class="testimonial__inner d-flex flex-column gap-3xl">
-                  <blockquote class="testimonial__quote m-0">
-                    <p class="testimonial__text ag-heading-2 m-0">
-                      “I was skeptical, but Area has completely transformed the
-                      way I manage my business. The data visualizations are so
-                      clear and intuitive, and the platform is so easy to use. I
-                      can't imagine running my company without it.”
-                    </p>
-                  </blockquote>
-
-                  <div
-                    class="testimonial__author d-flex flex-lg-column align-items-center align-items-lg-start gap-xxs"
-                  >
-                    <p class="ag-paragraph mb-0">John Smith</p>
-                    <p class="ag-captions mb-0">Head of Data</p>
-                  </div>
+                <div
+                  class="flex items-center gap-xxs lg:flex-col lg:items-start"
+                >
+                  <p class="text-paragraph text-headline">John Smith</p>
+                  <p class="text-captions text-text-captions">Head of Data</p>
                 </div>
               </div>
             </div>
@@ -617,110 +696,107 @@
       </section>
 
       <section id="steps" class="steps">
-        <div class="container-xxl pb-space-6xl">
-          <div class="divider"></div>
+        <div class="max-w-320 mx-auto px-2 pb-6xl">
           <div
-            class="row py-space-4xl d-flex flex-column flex-md-row gap-2xl align-items-start align-items-md-center"
+            class="py-4xl flex flex-col items-start md:flex-row md:items-center justify-between gap-2xl border-t border-divider"
           >
-            <div class="col-12 col-md">
-              <h2 class="ag-heading-1">Map Your Success</h2>
-            </div>
-            <div class="col-12 col-md-auto ms-md-auto mt-md-0">
-              <a
-                href="#"
-                class="btn btn-secondary ag-link rounded-pill py-space-xxs px-space-sm"
-              >
-                Discover More
-              </a>
-            </div>
+            <h2 class="font-display text-heading-1 text-headline">
+              Map Your Success
+            </h2>
+
+            <a
+              href="#"
+              class="inline-block bg-accent-2 hover:bg-accent-3 text-link text-text-link hover:text-background rounded-pill py-xxs px-sm transition-colors duration-300 ease-out"
+            >
+              Discover More
+            </a>
           </div>
 
-          <div class="steps__scroll">
-            <div class="row flex-nowrap">
-              <div class="col-md-4 steps__col">
-                <div class="divider"></div>
-                <div
-                  class="steps__item d-flex flex-column gap-5xl pt-space-3xl pb-space-sm pr-space-lg"
-                >
-                  <div class="steps__number ag-display-stats">01</div>
-
-                  <div class="d-flex flex-column gap-sm">
-                    <h3 class="ag-heading-3">Get Started</h3>
-                    <p class="ag-paragraph">
-                      With our intuitive setup, you're up and running in
-                      minutes.
-                    </p>
-                  </div>
-                </div>
+          <div
+            class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-sm lg:grid lg:grid-cols-3 lg:overflow-visible"
+          >
+            <div
+              class="steps__item flex flex-col min-w-62 snap-start lg:min-w-0 gap-4xl pt-3xl pb-sm pr-lg border-t border-divider"
+            >
+              <div class="steps__number text-display-stats text-accent-6">
+                01
               </div>
 
-              <div class="col-md-4 steps__col">
-                <div class="divider"></div>
-                <div
-                  class="steps__item d-flex flex-column gap-5xl pt-space-3xl pb-space-sm pr-space-lg"
-                >
-                  <div class="steps__number ag-display-stats">02</div>
+              <div class="flex flex-col gap-sm">
+                <h3 class="font-display text-heading-3">Get Started</h3>
+                <p class="text-paragraph text-text-paragraph">
+                  With our intuitive setup, you're up and running in minutes.
+                </p>
+              </div>
+            </div>
 
-                  <div class="d-flex flex-column gap-sm">
-                    <h3 class="ag-heading-3 gap-5xl">
-                      Customize and Configure
-                    </h3>
-                    <p class="ag-paragraph">
-                      Adapt Area to your specific requirements and preferences.
-                    </p>
-                  </div>
-                </div>
+            <div
+              class="steps__item flex flex-col min-w-62 snap-start lg:min-w-0 gap-4xl pt-3xl pb-sm pr-lg border-t border-divider"
+            >
+              <div class="steps__number text-display-stats text-accent-6">
+                02
               </div>
 
-              <div class="col-md-4 steps__col">
-                <div class="divider"></div>
-                <div
-                  class="steps__item d-flex flex-column gap-5xl pt-space-3xl pb-space-sm pr-space-lg"
-                >
-                  <div class="steps__number ag-display-stats">03</div>
+              <div class="flex flex-col gap-sm">
+                <h3 class="font-display text-heading-3">
+                  Customize and Configure
+                </h3>
+                <p class="text-paragraph text-text-paragraph">
+                  Adapt Area to your specific requirements and preferences.
+                </p>
+              </div>
+            </div>
 
-                  <div class="d-flex flex-column gap-sm">
-                    <h3 class="ag-heading-3">Grow Your Business</h3>
-                    <p class="ag-paragraph">
-                      Make informed decisions to exceed your goals.
-                    </p>
-                  </div>
-                </div>
+            <div
+              class="steps__item flex flex-col min-w-62 snap-start lg:min-w-0 gap-4xl pt-3xl pb-sm pr-lg border-t border-divider"
+            >
+              <div class="steps__number text-display-stats text-accent-6">
+                03
+              </div>
+
+              <div class="flex flex-col gap-sm">
+                <h3 class="font-display text-heading-3">Grow Your Business</h3>
+                <p class="text-paragraph text-text-paragraph">
+                  Make informed decisions to exceed your goals.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="image-section pb-space-xl">
-        <div class="container-xxl">
-          <div class="image-section__media overflow-hidden radius-lg">
+      <section class="image-section">
+        <div class="max-w-320 mx-auto px-2 pb-xl">
+          <div class="overflow-hidden">
             <img
               src="./assets/img/Hero-road-desctop.png"
               alt="Landscape view"
-              class="image-section__image img-fluid w-100"
+              class="w-full h-150 md:h-170 object-cover rounded-lg animate-fadeIn"
             />
           </div>
         </div>
       </section>
 
       <section id="connect" class="connect">
-        <div class="container-xxl">
-          <div class="divider"></div>
+        <div class="max-w-320 mx-auto px-2">
           <div
-            class="connect__content d-flex flex-column text-center py-space-6xl px-space-pill gap-2xl"
+            class="flex flex-col text-center py-6xl px-xxs md:px-5xl lg:px-pill gap-2xl border-t border-divider"
           >
-            <h2 class="ag-heading-1">Connect with us</h2>
-            <p class="ag-paragraph">
+            <h2 class="font-display text-heading-1">Connect with us</h2>
+            <p class="text-paragraph text-text-paragraph">
               Schedule a quick call to learn how Area can turn your regional
               data into a powerful advantage.
             </p>
 
             <a
               href="#"
-              class="btn btn-cta d-inline-flex justify-content-center align-items-center gap-xxxs ag-link"
+              class="group inline-flex items-center justify-center text-link px-sm py-xxs gap-xxxs bg-accent-1 hover:bg-accent-3 text-background rounded-pill transition-colors duration-300 ease-out"
               >Learn More
-              <img class="btn-cta__arrow" src="./assets/img/arrow.png" alt="" />
+              <img
+                src="./assets/img/arrow.png"
+                alt=""
+                class="inline-block transition-transform duration-200 ease-out group-hover:-translate-y-1"
+              />
             </a>
           </div>
         </div>
@@ -728,34 +804,37 @@
     </main>
 
     <section class="footer pb-space-xs">
-      <div class="container-xxl">
-        <div class="divider"></div>
+      <div class="max-w-320 mx-auto px-2">
         <div
-          class="footer-content d-flex flex-column pt-space-xl pb-space-xs gap-5xl"
+          class="footer-content flex flex-col pt-xl pb-xs gap-5xl border-t border-divider"
         >
           <div class="footer-nav">
-            <ul
-              class="ag-link list-unstyled d-flex flex-column flex-md-row gap-lg"
-            >
-              <li><a class="nav-link" href="#benefits">Benefits</a></li>
-              <li><a class="nav-link" href="#specs">Specifications</a></li>
-              <li><a class="nav-link" href="#steps">How-to</a></li>
+            <ul class="text-link flex flex-col md:flex-row gap-lg">
+              <li>
+                <a class="hover:text-accent-6" href="#benefits">Benefits</a>
+              </li>
+              <li>
+                <a class="hover:text-accent-6" href="#specs">Specifications</a>
+              </li>
+              <li><a class="hover:text-accent-6" href="#steps">How-to</a></li>
             </ul>
           </div>
 
           <div
-            class="footer-bottom d-flex flex-row align-items-end justify-content-between gap-2xl"
+            class="footer-bottom flex flex-row items-end justify-between gap-2xl"
           >
-            <div class="footer-left d-flex align-items-end gap-2xl">
+            <div class="footer-left flex items-end gap-2xl">
               <img src="./assets/icons/Footer.svg" alt="" />
 
-              <div class="footer__copyright ag-captions">
+              <div
+                class="footer__copyright flex text-captions gap-xs text-text-captions"
+              >
                 <span>&copy; Area.</span>
                 <span>2025</span>
               </div>
             </div>
 
-            <div class="footer-right d-flex ag-captions">
+            <div class="footer-right flex text-captions text-text-captions">
               All Rights Reserved
             </div>
           </div>
@@ -763,12 +842,6 @@
       </div>
     </section>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/index.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

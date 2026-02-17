@@ -1,0 +1,25 @@
+@config "../tailwind.config.js";
+@import "tailwindcss";
+
+body {
+  @apply font-base;
+}
+
+.cq {
+  container-type: inline-size;
+}
+
+#burgerBtn.is-open span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  #burgerBtn.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #burgerBtn.is-open span:nth-child(3) {
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }

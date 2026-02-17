@@ -1,49 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const columns = document.querySelectorAll(".specs__scroll .col-md-4");
-  let activeColumn = document.querySelector(
-    ".specs__scroll .col-md-4.is-active"
-  );
+const columns = document.querySelectorAll("#specs [data-column]");
 
-  const isDesktop = () => window.matchMedia("(min-width: 1200px)").matches;
-
-  function setActiveColumn(column) {
-    columns.forEach(col => col.classList.remove("is-active"));
-    column.classList.add("is-active");
-  }
-
-  columns.forEach(column => {
-
-    column.addEventListener("click", () => {
-      activeColumn = column;
-      setActiveColumn(column);
-    });
-
-    column.addEventListener("mouseenter", () => {
-      if (!isDesktop()) return;
-      setActiveColumn(column);
-    });
-
-    column.addEventListener("mouseleave", () => {
-      if (!isDesktop()) return;
-
-      if (activeColumn) {
-        setActiveColumn(activeColumn);
-      } else {
-        column.classList.remove("is-active");
-      }
-    });
+columns.forEach((col) => {
+  col.addEventListener("click", () => {
+    columns.forEach((c) => c.setAttribute("data-active", "false"));
+    col.setAttribute("data-active", "true");
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const offcanvasEl = document.getElementById("mobileNav");
-  const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+const burgerBtn = document.getElementById("burgerBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobilePanel = mobileMenu.querySelector("div");
+const mobileLinks = document.querySelectorAll(".mobile-link");
+const mobileClose = document.getElementById("mobileClose");
 
-  const mobileLinks = offcanvasEl.querySelectorAll(".js-scroll");
+function openMenu() {
+  burgerBtn.classList.add("is-open");
+  mobileMenu.classList.remove("opacity-0", "pointer-events-none");
+  mobilePanel.classList.remove("-translate-y-full");
+  document.body.classList.add("overflow-hidden");
+}
 
-  mobileLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      offcanvas.hide();
-    });
-  });
+function closeMenu() {
+  burgerBtn.classList.remove("is-open");
+  mobileMenu.classList.add("opacity-0", "pointer-events-none");
+  mobilePanel.classList.add("-translate-y-full");
+  document.body.classList.remove("overflow-hidden");
+}
+
+burgerBtn.addEventListener("click", openMenu);
+mobileClose.addEventListener("click", closeMenu);
+
+mobileMenu.addEventListener("click", (e) => {
+  if (e.target === mobileMenu) closeMenu();
+});
+
+mobileLinks.forEach((link) => {
+  link.addEventListener("click", closeMenu);
 });
